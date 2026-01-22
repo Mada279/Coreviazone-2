@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="htmlTag">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COREVIAZONE | مختبر هندسة محطات العمل</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-mode" id="bodyTag">
+
+    <nav class="navbar">
+        <div class="container nav-flex">
+            <div class="logo-container">
+                <img src="1000355048.jpg" alt="CoreviaZone Logo" class="main-logo">
+            </div>
+            <div class="nav-links">
+                <a href="#hero">الرئيسية</a>
+                <a href="#about">الفلسفة</a>
+                <a href="#arsenal">الترسانة</a>
+            </div>
+            <div class="controls">
+                <button onclick="toggleTheme()" class="control-btn" id="themeBtn"><i class="fas fa-sun"></i></button>
+                <button onclick="openAdmin()" class="control-btn admin-btn"><i class="fas fa-user-shield"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero" class="hero-section">
+        <div class="container hero-flex">
+            <div class="hero-text" data-aos="fade-left">
+                <span class="badge">Certified Engineering Lab</span>
+                <h1>هندسة الأداء <br><span class="accent-color">بمعايير المختبر</span></h1>
+                <p class="hero-desc">في COREVIAZONE، نقوم بإعادة تأهيل محطات العمل لتتجاوز معايير المصنع. فحص مجهري، اختبارات إجهاد، وضمان رقمي حقيقي.</p>
+                <div class="hero-btns">
+                    <a href="#arsenal" class="main-btn">دخول الترسانة</a>
+                    <a href="#about" class="sec-btn">بروتوكول CZ</a>
+                </div>
+            </div>
+            <div class="hero-img" data-aos="zoom-in">
+                <img src="https://i.ibb.co/3kXJ8H9/laptop-mockup.webp" alt="Workstation">
+            </div>
+        </div>
+    </section>
+
+    <section id="arsenal" class="section-padding bg-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="gold-text">ترسانة النخبة</h2>
+                <input type="text" id="searchInput" onkeyup="searchArsenal()" placeholder="ابحث عن موديل أو كود...">
+            </div>
+            <div id="arsenalGrid" class="grid-container"></div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div>
+                <img src="1000355048.jpg" class="footer-logo">
+                <p>الدقة هي لغتنا، والضمان هو عهدنا.</p>
+            </div>
+            <div class="footer-links text-left">
+                <h4 class="gold-text">تواصل مع المختبر</h4>
+                <a href="https://wa.me/2015230445"><i class="fab fa-whatsapp"></i> 002015230445</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="passportModal" class="modal-overlay">
+        <div class="modal-content passport-layout">
+            <button onclick="closePassport()" class="close-btn">&times;</button>
+            <div id="passportContent"></div>
+        </div>
+    </div>
+
+    <div id="adminModal" class="modal-overlay">
+        <div class="modal-content admin-card">
+            <button onclick="closeAdmin()" class="close-btn">&times;</button>
+            <h3>إضافة وحدة جديدة</h3>
+            <div class="admin-form">
+                <input type="text" id="pId" placeholder="كود الوحدة (CZ-XXXX)">
+                <input type="text" id="pName" placeholder="اسم الجهاز">
+                <input type="number" id="pPrice" placeholder="السعر">
+                <input type="text" id="pCpu" placeholder="المواصفات">
+                <input type="text" id="pImg" placeholder="رابط الصورة">
+                <button onclick="saveProduct()" class="main-btn">حفظ في السجلات</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
